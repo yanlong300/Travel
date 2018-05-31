@@ -2,7 +2,7 @@
   <div>
     <div class="title"><div class="iconfont back-icon">&#xe60c;猜你喜欢</div></div>
     <ul>
-      <li class="item border-bottom" v-for="item of reconmmendList" :key="item.id" >
+      <li class="item border-bottom" v-for="item of list" :key="item.id" >
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" />
         </div>
@@ -19,30 +19,8 @@
 <script>
 export default {
   name: 'HomeReconmmend',
-  data () {
-    return {
-      reconmmendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_150x150_06cb3e52.jpg',
-        title: '故宫博物院',
-        desc: '还记得影视剧中，皇帝上朝的金銮殿嘛？金銮殿名为太和殿。'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_150x150_06cb3e52.jpg',
-        title: '故宫博物院',
-        desc: '还记得影视剧中，皇帝上朝的金銮殿嘛？金銮殿名为太和殿。'
-      }, {
-        id: '0005',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_150x150_06cb3e52.jpg',
-        title: '故宫博物院',
-        desc: '还记得影视剧中，皇帝上朝的金銮殿嘛？金銮殿名为太和殿。'
-      }, {
-        id: '0006',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_150x150_06cb3e52.jpg',
-        title: '故宫博物院',
-        desc: '还记得影视剧中，皇帝上朝的金銮殿嘛？金銮殿名为太和殿。'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
