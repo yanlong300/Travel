@@ -35,7 +35,7 @@ export default {
     }
   },
   updated () {
-      this.startY = this.$refs['A'][0].offsetTop
+    this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
     handleLetterClick (e) {
@@ -46,11 +46,11 @@ export default {
     },
     handleTouchMove (e) {
       if (this.touchStatus) {
-        if(this.timer){
+        if (this.timer) {
           clearTimeout(this.timer)
-        }else{
+        } else {
           this.timer = setTimeout(() => {
-          },16)
+          }, 16)
         }
         const touchY = e.touches[0].clientY - 79
         const index = Math.floor((touchY - this.startY) / 20)

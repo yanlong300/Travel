@@ -1,7 +1,7 @@
 <template>
   <div>
     <city-header/>
-    <city-search/>
+    <city-search :cities="cities" />
     <city-list :cities="cities" :hotCities="hotCities" :letter="letter"/>
     <city-alphabet :cities="cities" @change="handleLetterChange" />
   </div>
@@ -37,7 +37,6 @@ export default {
       axios.get('/static/mock/city.json').then(this.handleGetCityInfoSuccess)
     },
     handleGetCityInfoSuccess (result) {
-      console.log(result)
       result = result.data
       if (result.ret && result.data) {
         const data = result.data
